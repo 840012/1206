@@ -1,0 +1,56 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+button {
+  font-family: "Dosis", serif;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+/* 通用樣式 */
+.hamburger {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.bar {
+  background-color: #333; /* 黑色 */
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  transition: 0.4s; /* 平滑過渡 */
+}
+
+/* 點擊後變成 X 的效果 */
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 9px); /* 第一條旋轉+位移 */
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0; /* 隱藏中間那條 */
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -9px); /* 第三條旋轉+位移 */
+}
+
+.menu {
+  display: none;
+  list-style: none;
+}
+.menu.open {
+  display: block;
+}
